@@ -1,0 +1,35 @@
+Problem3:
+Log Aggregation within Date Range
+
+Description: Verify that logs are correctly aggregated within a specified date range.
+Setup:
+Log Files:
+log1.log with entry: {"EventDateTime": "2024-08-06 06:10:51.5839", "Message": "Error occurred"}
+log2.log with entry: {"EventDateTime": "2024-08-07 06:10:21.9338", "Message": "Info message"}
+Date Range: From 2024-08-06 to 2024-08-06
+Expected Result:
+Logs within the date range should include:
+{"EventDateTime": "2024-08-06 06:10:51.5839", "Message": "Error occurred"}
+Search Logs for Specific String
+
+Description: Test the log search functionality for a specific string.
+Setup:
+Log Files:
+log1.log with entry: {"EventDateTime": "2024-08-06 06:10:51.5839", "Message": "Error occurred"}
+log2.log with entry: {"EventDateTime": "2024-08-07 06:10:21.9338", "Message": "Info message"}
+Search String: Error
+Expected Result:
+Logs containing the search string Error should include:
+{"EventDateTime": "2024-08-06 06:10:51.5839", "Message": "Error occurred"}
+Handle Non-Existent Logs
+
+Description: Test the scenario where no logs exist within the specified date range.
+Setup:
+Log Files:
+log1.log with entry: {"EventDateTime": "2024-08-06 06:10:51.5839", "Message": "Error occurred"}
+Date Range: From 2024-08-07 to 2024-08-08
+Expected Result:
+The function should return an empty list as there are no logs within the date range.
+
+
+

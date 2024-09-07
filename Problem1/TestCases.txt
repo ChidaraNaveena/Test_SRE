@@ -1,0 +1,34 @@
+Problem1:
+Basic Functionality
+
+Description: Verify that the utility correctly creates missing folders.
+Setup:
+Source Directory: source_dir contains:
+folder1
+folder1/subfolder
+Target Directory: target_dir is empty.
+Expected Result:
+target_dir should have:
+folder1
+folder1/subfolder
+Empty Source Directory
+
+Description: Test the function with an empty source directory.
+Setup:
+Source Directory: source_dir is empty.
+Target Directory: target_dir contains:
+existing_folder
+Expected Result:
+target_dir should still have:
+existing_folder
+Non-Existing Source Directory
+
+Description: Test the function when the source directory does not exist.
+Setup:
+Source Directory: non_existent_source (non-existent path).
+Target Directory: target_dir contains:
+existing_folder
+Expected Result:
+target_dir should still have:
+existing_folder
+The function should handle the error gracefully without modifying target_dir.
