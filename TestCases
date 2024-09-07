@@ -1,0 +1,109 @@
+Problem 1:
+Folder Creation Utility
+Basic Functionality
+
+Description: Verify that the utility correctly creates missing folders.
+Setup:
+Source Directory: source_dir contains:
+folder1
+folder1/subfolder
+Target Directory: target_dir is empty.
+Expected Result:
+target_dir should have:
+folder1
+folder1/subfolder
+Empty Source Directory
+
+Description: Test the function with an empty source directory.
+Setup:
+Source Directory: source_dir is empty.
+Target Directory: target_dir contains:
+existing_folder
+Expected Result:
+target_dir should still have:
+existing_folder
+Non-Existing Source Directory
+
+Description: Test the function when the source directory does not exist.
+Setup:
+Source Directory: non_existent_source (non-existent path).
+Target Directory: target_dir contains:
+existing_folder
+Expected Result:
+target_dir should still have:
+existing_folder
+The function should handle the error gracefully without modifying target_dir.
+
+
+
+
+
+
+
+Problem 2: URL Shortener Console Application
+URL Shortening
+
+Description: Verify that a URL is shortened correctly and the mapping is saved.
+Setup:
+Long URL: https://www.example.com/page?param=value
+Expected Short URL: https://short.url/a1b2c3
+Mapping: a1b2c3 -> https://www.example.com/page?param=value
+Expected Result:
+The short URL https://short.url/a1b2c3 maps to https://www.example.com/page?param=value.
+URL Navigation
+
+Description: Test the navigation functionality to ensure it opens the correct URL in the browser.
+Setup:
+Short URL: https://short.url/a1b2c3 (mapped to https://www.example.com/page?param=value)
+Expected Result:
+The browser should open https://www.example.com/page?param=value.
+Invalid Short URL
+
+Description: Check handling of an invalid short URL.
+Setup:
+Invalid Short URL: https://short.url/invalidcode
+Expected Result:
+The application should indicate that the short URL is not found.
+
+
+
+
+
+
+
+
+Problem 3: Log Aggregation Tool
+Log Aggregation within Date Range
+
+Description: Verify that logs are correctly aggregated within a specified date range.
+Setup:
+Log Files:
+log1.log with entry: {"EventDateTime": "2024-08-06 06:10:51.5839", "Message": "Error occurred"}
+log2.log with entry: {"EventDateTime": "2024-08-07 06:10:21.9338", "Message": "Info message"}
+Date Range: From 2024-08-06 to 2024-08-06
+Expected Result:
+Logs within the date range should include:
+{"EventDateTime": "2024-08-06 06:10:51.5839", "Message": "Error occurred"}
+Search Logs for Specific String
+
+Description: Test the log search functionality for a specific string.
+Setup:
+Log Files:
+log1.log with entry: {"EventDateTime": "2024-08-06 06:10:51.5839", "Message": "Error occurred"}
+log2.log with entry: {"EventDateTime": "2024-08-07 06:10:21.9338", "Message": "Info message"}
+Search String: Error
+Expected Result:
+Logs containing the search string Error should include:
+{"EventDateTime": "2024-08-06 06:10:51.5839", "Message": "Error occurred"}
+Handle Non-Existent Logs
+
+Description: Test the scenario where no logs exist within the specified date range.
+Setup:
+Log Files:
+log1.log with entry: {"EventDateTime": "2024-08-06 06:10:51.5839", "Message": "Error occurred"}
+Date Range: From 2024-08-07 to 2024-08-08
+Expected Result:
+The function should return an empty list as there are no logs within the date range.
+
+
+
